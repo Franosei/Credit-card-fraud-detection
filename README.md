@@ -1,1 +1,71 @@
 # Credit-card-fraud-detection
+
+Classification using unbalanced data set from https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud.
+
+In this exercise we first trained our model using unbalbced data to see the accuracy of our model
+
+After train our model with unbalanced train data we had the following as precision and recal with confusion matrix for both validation data and test data
+
+---------------------------------------
+  precision       |  Recall            |
+---------------------------------------
+0.9995786368903402|0.9997892740490991  |
+---------------------------------------
+
+confusion matrix for validation data
+    ------------------------------------
+1   |       5.0   |      5.0            |
+    ------------------------------------
+0   |      40.0   |     28315.0         |
+    -------------------------------------
+            1                   0       
+            
+confusion matrix for test data
+    ------------------------------------
+1   |     14.0      |      8.0           |
+    ------------------------------------
+0   |     43.0     |     28255.0         |
+    -------------------------------------            
+            1                  0                   
+                  
+recall for correctly classifying as fraud was 0.0007 for the test 
+
+We could observe that our model is learning the the most frequent class. That is the model predict all class as non fraud.
+
+
+
+Now we tried to apply sampling techniques to address this issue. In this problem we worked with spark dataframe.
+
+Here we tried to use the undersampling method ro deal with the unbalance dataset.
+
+We undersampled the class 1 and used as our training data.
+Evaluation was done on the test set which gives as the following output
+
+---------------------------------------
+  precision       |  Recall            |
+---------------------------------------
+ 0.999889770723104|0.9609110169491526  |
+---------------------------------------
+
+
+confusion matrix for test data
+    ------------------------------------
+1   |    42.0        |    1107.0        |
+    ------------------------------------
+0   |     3 .0       |     27213.0      |
+    -------------------------------------            
+            1                   0    
+            
+confusion matrix for test data
+    ------------------------------------
+1   |      52.0     |      1156.0       |
+    ------------------------------------
+0   |      5.0      |     27107.0       |
+    -------------------------------------            
+            1                   0         
+
+test recall for 1.0 is 0.9007633587786259
+
+Thus we were able to correctly classify 90% of our test as fraud which shows a maximum improvement as compared with working with the unbalanced data
+
+Note: before you apply machine learning for classification problem, first check if your data s balanced or not
