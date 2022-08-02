@@ -1,4 +1,4 @@
-fter train our model with unbalanced train data we had the following as precision and recal with confusion matrix for both validation data and test data
+After train our model with unbalanced train data we had the following as precision and recal with confusion matrix for both validation data and test data
 
 ---------------------------------------
   precision       |  Recall            |
