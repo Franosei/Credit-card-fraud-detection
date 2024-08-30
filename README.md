@@ -41,7 +41,7 @@ This project was developed in Scala. To run the project, ensure that you have a 
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/your_username/credit-card-fraud-detection.git](https://github.com/Franosei/Credit-card-fraud-detection.git
-    cd credit-card-fraud-detection
+    cd credit-card
     ```
 
 2. **Run the Scala application**:
